@@ -1,0 +1,32 @@
+<% include ../partials/header.ejs %>
+<div id="shoppingCart" >
+<%if(products){%>
+<%products.forEach(function(product){%>
+ <fieldset id='actionfi'> 
+    <ul id="actioncont">
+        <li class="act1" ><%=product.item.title%></li>
+         <li class="act1"><%=product.item.price%></li>
+          <li class="act1 header4" >
+            action
+            <ul id="dropdown" >
+            <li> <a href="#" >remove</a> </li>
+            <li> <a href="#" >remove</a></li>
+            <li> <a href="#" >remove</a> </li>
+            </ul>
+          </li>
+          <li><%=product.qty%></li>
+    </ul>
+   
+</fieldset>
+    
+<%})%>
+   
+      <h3>Total:<%=totalPrice%></h3>
+      <button type="">Checkout</button>
+<%}else{%>
+ <h1>NO ITEM FOUND IN CART</h1>
+<%}%>
+
+</div>
+
+<% include ../partials/footer.ejs %>

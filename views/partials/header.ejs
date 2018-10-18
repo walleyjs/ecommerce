@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title><%=title%></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="style/index.css" rel="stylesheet">
+        <link href="../style/index.css" rel="stylesheet">
     </head>
 <body>
     <div>
     <div id="headercont">
-        <a href="/landing" class="header header1">Brand</a>
-        <a href="#" class="header header2">Shopping Cart</a>
+        <a href="/" class="header header1">Brand</a>
+        <a href="/shopping-cart" class="header header2">
+        Shopping Cart
+       <% if(session.cart){%>
+            <%=session.cart.totalQty%>
+        <%}else{%>
+            0
+       <% }%>
+        
+        </a>
         <span class="header header4"> 
-        User Management <img src="imgs/arrowdown.svg" alt="arrow down" width="12px" id="img">
+        User Management <img src="../imgs/arrowdown.svg" alt="arrow down" width="12px" id="img">
         <ul id="dropdown" >
             <li> <a href="#"> User Account</a></li>
             <li> <a href="#">empty</a></li>
